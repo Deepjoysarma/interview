@@ -32,6 +32,10 @@ const SignUp = () => {
 
             
             if(response.data.success) {
+              const token = response.data.jwtToken;
+        
+              localStorage.setItem('jwtToken', token);
+              
               toast.success('Signup successful!', { position: 'top-right' })
               setTimeout(()=>{
                 navigate('/home');
